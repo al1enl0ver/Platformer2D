@@ -2,20 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PickUp : MonoBehaviour
 {
-    [SerializeField] private int shrimp = 0;
+    [SerializeField] public int shrimp = 0;
     public Text shrimpText;
-
-    void Start()
-    {
-        
-    }
+    public GameObject objectToActivate;
 
     void Update()
     {
-        shrimpText.text = "Shrimp : " + shrimp.ToString();
+        shrimpText.text = shrimp.ToString();
+
+        if (shrimp == 4)
+        {
+            objectToActivate.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -25,6 +28,6 @@ public class PickUp : MonoBehaviour
             Destroy(other.gameObject);
             shrimp++;
         }
-    }       
+    }      
 }
 

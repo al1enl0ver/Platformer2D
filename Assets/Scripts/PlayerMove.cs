@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour
     private float Move;
     private Rigidbody2D rb2d;
     [SerializeField] public float jump;
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -22,5 +23,7 @@ public class PlayerMove : MonoBehaviour
         {
             rb2d.AddForce(new Vector2(rb2d.velocity.x, jump));
         }
+
+
     }
 }
