@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - GoldShrimp
   - WinScreen
+  - Ground
   layers:
   - Default
   - TransparentFX
