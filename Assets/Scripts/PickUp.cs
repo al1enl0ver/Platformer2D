@@ -9,12 +9,18 @@ public class PickUp : MonoBehaviour
     [SerializeField] public int shrimp = 0;
     public Text shrimpText;
     public GameObject objectToActivate;
+    [SerializeField] private GameObject[] shrimpCount;
+
+    void Start()
+    {
+        shrimpCount = GameObject.FindGameObjectsWithTag("Shrimp");
+    }
 
     void Update()
     {
         shrimpText.text = shrimp.ToString();
 
-        if (shrimp == 4)
+        if (shrimp == shrimpCount.Length)
         {
             objectToActivate.SetActive(true);
             Time.timeScale = 0f;
