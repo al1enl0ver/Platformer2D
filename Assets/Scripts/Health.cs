@@ -8,6 +8,12 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int health = 3;
     public Text healthText;
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -27,6 +33,7 @@ public class Health : MonoBehaviour
         }
         else if (other.gameObject.tag == "GoldShrimp")
         {
+            audioSource.Play();
             health++;
             Destroy(other.gameObject);
         }

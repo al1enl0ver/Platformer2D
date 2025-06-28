@@ -10,7 +10,7 @@ public class MoveBackground : MonoBehaviour
         transform.position += Vector3.left * Time.deltaTime * speed;
         if (transform.position.x < -20)
         {
-            transform.position = new Vector3(8f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(6.45f, transform.position.y, transform.position.z);
         }
     }
 }

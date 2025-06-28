@@ -10,9 +10,11 @@ public class PickUp : MonoBehaviour
     public Text shrimpText;
     public GameObject objectToActivate;
     [SerializeField] private GameObject[] shrimpCount;
+    private AudioSource audioSource;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         shrimpCount = GameObject.FindGameObjectsWithTag("Shrimp");
     }
 
@@ -31,6 +33,7 @@ public class PickUp : MonoBehaviour
     {
         if (other.gameObject.tag == "Shrimp")
         {
+            audioSource.Play();
             Destroy(other.gameObject);
             shrimp++;
         }
